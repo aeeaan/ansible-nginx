@@ -1,4 +1,8 @@
 ---
+- name: configure nginx repo
+  include: repos.yml
+  when: nginx_upstream_repo
+
 - name: install nginx
   yum: name=nginx state=present
   tags:
